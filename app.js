@@ -213,7 +213,7 @@ app.get("/districts/:districtId/details/", async (request, response) => {
     `;
 
   const stateIdFromDb = await database.run(stateIdQuery);
-  response.send((stateName: stateIdFromDb.state_name));
+  response.send(({stateName: stateIdFromDb.state_name}));
 });
 
 module.exports = app;
